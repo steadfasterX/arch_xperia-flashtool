@@ -9,8 +9,8 @@ arch=('i686' 'x86_64')
 url="http://www.flashtool.net/"
 license=('unknown')
 depends=('libselinux')
-makedepends=('p7zip')
-source=("https://github.com/steadfasterX/arch_xperia-flashtool/raw/master/flashtool-${pkgver}-linux.tar.7z"
+makedepends=('p7zip' 'git-lfs')
+source=("flashtool-${pkgver}-linux.tar.7z"
         "${pkgname}.sh")
 
 # backup 1 is on datafilehost (no DDL): http://www.datafilehost.com/get.php?file=efb20448
@@ -22,6 +22,7 @@ sha256sums=('254ed7e992b5a3617c95b00d539251f5eb1476d5bd5e16cd03eaf092249b042c'
 options=('!strip')
 
 build() {
+  git lfs checkout flashtool-${pkgver}-linux.tar.7z
   tar xf "${_realname}-${pkgver}-linux.tar"
 }
 
