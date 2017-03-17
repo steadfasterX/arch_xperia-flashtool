@@ -13,6 +13,7 @@ makedepends=('p7zip' 'git-lfs')
 source=("flashtool-${pkgver}-linux.tar.7z"
         "${pkgname}.sh")
 
+# main url is: https://forum.xda-developers.com/devdb/project/dl/?id=23693&task=get
 # backup 1 is on datafilehost (no DDL): http://www.datafilehost.com/get.php?file=efb20448
 # backup 2 is on AFH (no DDL): https://www.androidfilehost.com/?fid=457095661767145062
 # backup 3 is on ZippyShare: http://www99.zippyshare.com/v/VGK1tzim/file.html
@@ -22,7 +23,6 @@ sha256sums=('254ed7e992b5a3617c95b00d539251f5eb1476d5bd5e16cd03eaf092249b042c'
 options=('!strip')
 
 build() {
-  git lfs checkout flashtool-${pkgver}-linux.tar.7z
   tar xf "${_realname}-${pkgver}-linux.tar"
 }
 
