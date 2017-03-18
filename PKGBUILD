@@ -9,7 +9,7 @@ arch=('i686' 'x86_64')
 url="http://www.flashtool.net/"
 license=('unknown')
 depends=('libselinux')
-makedepends=('p7zip' 'git-lfs')
+makedepends=('p7zip')
 source=("flashtool-${pkgver}-linux.tar.7z"
         "${pkgname}.sh")
 
