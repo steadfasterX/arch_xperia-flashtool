@@ -3,7 +3,7 @@
 pkgname=xperia-flashtool
 _realname=flashtool
 pkgver=0.9.23.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A S1 protocol flashing software for Sony Xperia phones"
 arch=('i686' 'x86_64')
 url="http://www.flashtool.net/"
@@ -31,7 +31,7 @@ build() {
 package() {
   # Remove useless files for the selected architecture
   pushd "FlashTool/x10flasher_lib" > /dev/null
-  if [ "$CARCH"=="x86_64" ]; then
+  if [ "$CARCH" == "x86_64" ]; then
     rm -rf "adb.linux.x86" "fastboot.linux.x86" "unyaffs.linux.x86" \
       "linjre32" "linux/lib32" "swtlin/swt32.jar"
   else
